@@ -1,8 +1,6 @@
 import axios from 'axios';
 import React, { useState, useMemo, useEffect } from 'react';
-import { FiSearch, FiEdit, FiTrash2, FiChevronUp, FiChevronDown, FiChevronLeft, FiChevronRight } from 'react-icons/fi';
-import { LuEye } from 'react-icons/lu';
-import { Link } from 'react-router-dom';
+import { FiSearch,  FiChevronUp, FiChevronDown, FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 import { ActionButtons } from '~/components/shared/ActionButtons';
 import {Button} from '~/components/shared/Button';
 import Loader from '~/components/shared/Loading';
@@ -52,7 +50,7 @@ const PatientTable: React.FC = () => {
 
   // Logika filter dan sort (tidak berubah)
   const sortedAndFilteredPatients = useMemo(() => {
-    let sortableItems = [...patients].filter((patient) =>
+    const sortableItems = [...patients].filter((patient) =>
       patient.nama_pasien.toLowerCase().includes(searchTerm.toLowerCase()) ||
       patient.email.toLowerCase().includes(searchTerm.toLowerCase()) ||
       patient.no_hp.includes(searchTerm)

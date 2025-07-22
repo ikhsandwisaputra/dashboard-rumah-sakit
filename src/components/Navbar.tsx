@@ -1,9 +1,7 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
 
-type Props = {}
 
-function Navbar({}: Props) {
+function Navbar() {
   return (
     <>
     <nav className="bg-white shadow-md">

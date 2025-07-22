@@ -1,8 +1,4 @@
-import React from 'react'
-
-type Props = {}
-
-function Home({}: Props) {
+function Home() {
   return (
     <div>Home</div>
   )

@@ -1,8 +1,4 @@
-import React from 'react'
-
-type Props = {}
-
-function AccessRequest({}: Props) {
+function AccessRequest() {
   return (
     <div>AccessRequest</div>
   )

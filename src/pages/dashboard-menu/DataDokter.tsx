@@ -1,11 +1,10 @@
 import axios from 'axios';
 import React, { useState, useMemo, useEffect } from 'react';
-import { FiSearch, FiEdit, FiTrash2, FiChevronUp, FiChevronDown, FiChevronLeft, FiChevronRight } from 'react-icons/fi';
-import { Link } from 'react-router-dom';
+import { FiSearch,  FiChevronUp, FiChevronDown, FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 import {ActionButtons} from '~/components/shared/ActionButtons';
 import {Button} from '~/components/shared/Button';
 import Loader from '~/components/shared/Loading';
-import Tooltip from '~/components/shared/Tooltip';
+
 
 type Dokter = {
   id_dokter: string;
@@ -50,7 +49,7 @@ const [loading, setLoading] = React.useState(false);
 
   // Logika filter dan sort (tidak berubah)
   const sortedAndFilteredDokters = useMemo(() => {
-    let sortableItems = [...dokters].filter((dokter) =>
+    const sortableItems = [...dokters].filter((dokter) =>
       dokter.nama_dokter.toLowerCase().includes(searchTerm.toLowerCase()) ||
       dokter.email_dokter.toLowerCase().includes(searchTerm.toLowerCase()) ||
       dokter.kontak_dokter.includes(searchTerm)

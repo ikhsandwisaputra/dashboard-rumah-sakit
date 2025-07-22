@@ -1,9 +1,8 @@
-import React from 'react'
 import UserProfile from './shared/UserProfile'
 import BreadCrumb from './shared/BreadCrumb'
-type Props = {}
 
-function DashboardNav({}: Props) {
+
+function DashboardNav() {
   return (
    <>
     <main className="flex-1  sm:p-2 lg:p-4">
