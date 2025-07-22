@@ -1,0 +1,30 @@
+@import "tailwindcss";
+@theme {
+  --color-brand-primary: #2A6F56;        /* Hijau tua sidebar */
+  --color-brand-primary-light: #3E836A;  /* Hijau hover */
+  --color-brand-accent: #38D4A2;         /* Hijau aktif & progress */
+  --color-brand-background: #F0F4F2;     /* Latar belakang */
+  --color-brand-text-primary: #374151;   /* Teks abu tua */
+  --color-brand-text-secondary: #6B7280
+  --color-brand-active-text: #D9A456;
+}
+
+.active-nav-scoop::before,
+.active-nav-scoop::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 2rem;
+  height: 2rem;
+  box-shadow: 1rem 1rem 0 0.9rem var(--brand-primary);
+  transition: all 0.3s ease; /* Smooth transition */
+}
+
+.rounded-l-full {
+  transition: border-radius 0.3s ease, background-color 0.3s ease, padding 0.3s ease;
+}
+
+.active-nav-scoop::before,
+.active-nav-scoop::after {
+  transition: all 0.3s ease;
+}
