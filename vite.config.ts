@@ -5,7 +5,7 @@ import tsconfigPaths from 'vite-tsconfig-paths';
 import path from 'path';
 // https://vite.dev/config/
 export default defineConfig({
-   base: "/dashboard-rumah-sakit/",
+  base: "/dashboard-rumah-sakit",
   resolve: {
    alias: {
       "~": path.resolve(__dirname, "./src"),

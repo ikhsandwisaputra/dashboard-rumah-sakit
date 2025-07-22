@@ -16,32 +16,37 @@ import { Toaster } from 'react-hot-toast';
 
 
 
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+  [
+    {
+      path: '/',
+      element: <PublicLayout />,
+      children: [
+        { path: '/', element: <Home /> },
+        { path: '*', element: <NotFoundPage /> },
+      ],
+    },
+    {
+      path: '/dashboard',
+      element: <DashboardLayout />,
+      children: [
+        { index: true, element: <MainContent /> },
+        { path: 'data-pasien', element: <DataPasien /> },
+        { path: 'data-pasien/form-pasien', element: <FormPasien /> },
+        { path: 'data-pasien/form-pasien/:id', element: <FormPasien /> },
+        { path: 'data-dokter', element: <DataDokter /> },
+        { path: 'data-dokter/form-dokter', element: <FormDokter /> },
+        { path: 'data-dokter/form-dokter/:id', element: <FormDokter /> },
+        { path: 'access-request', element: <AccessRequest /> },
+      ],
+    },
+    { path: '*', element: <NotFoundPage /> },
+  ],
   {
-    path: '/',
-    element: <PublicLayout/>,
-    children: [
-      { path: '/', element: <Home /> },
-      { path: '*', element: <NotFoundPage /> },
-    ]
-  },
-  {
-  path: '/dashboard',
-  element: <DashboardLayout />,
- // Navbar tetap tampil di semua halaman
-    children: [       
-         { index: true, element: <MainContent /> },
-        { path: '/dashboard/data-pasien', element: <DataPasien /> },
-        { path: '/dashboard/data-pasien/form-pasien', element: <FormPasien /> },
-        { path: '/dashboard/data-pasien/form-pasien/:id', element: <FormPasien /> },        
-        { path: '/dashboard/data-dokter', element: <DataDokter /> },        
-        { path: '/dashboard/data-dokter/form-dokter', element: <FormDokter /> },
-        { path: '/dashboard/data-dokter/form-dokter/:id', element: <FormDokter /> },
-        { path: '/dashboard/access-request', element: <AccessRequest /> },
+    basename: '/dashboard-rumah-sakit', // <- Di sini kamu menaruh basename
+  }
+);
 
-      ] },
-      { path: '*', element: <NotFoundPage /> },
-]);
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
